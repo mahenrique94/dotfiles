@@ -1,14 +1,24 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/matheushc/.oh-my-zsh"
+export ZSH="/Users/matheuchc/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,11 +84,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 ZSH_DISABLE_COMPFIX="true"
-
-SPACESHIP_USER_SHOW=always
-SPACESHIP_BATTERY_SHOW=false
-SPACESHIP_AWS_SHOW=false
-SPACESHIP_GCLOUD_SHOW=false
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -149,13 +154,26 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/matheushc/google-cloud-sdk/path.zsh.inc' ]; then . '/home/matheushc/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/matheushc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/matheushc/google-cloud-sdk/completion.zsh.inc'; fi
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Flutter binaries
+export PATH="$PATH:$HOME/.tools/flutter/bin"
+
+# Starship
+eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matheuchc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheuchc/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matheuchc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheuchc/google-cloud-sdk/completion.zsh.inc'; fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

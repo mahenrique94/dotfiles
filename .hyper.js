@@ -92,10 +92,10 @@ module.exports = {
     //
     // Cygwin
     // - Example: `C:\\cygwin64\\bin\\bash.exe`
-    shell: "C:\\Windows\\System32\\wsl.exe",
+    shell: "/opt/homebrew/bin/zsh",
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ["~"],
+    // shellArgs: ["~"],
     // for environment variables
     env: {},
     // Supported Options:
@@ -144,11 +144,13 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-pane", "hyper-aura-theme"],
+  plugins: ["hyper-pane", "hyper-aura-theme", "hyper-font-ligatures", "hyperline"],
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: [],
+  localPlugins: [
+  
+],
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
