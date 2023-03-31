@@ -12,7 +12,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/matheuchc/.oh-my-zsh"
+export ZSH="/Users/matheushc/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -167,10 +167,10 @@ export PATH="$PATH:$HOME/.tools/flutter/bin"
 eval "$(starship init zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/matheuchc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheuchc/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/matheushc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheushc/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/matheuchc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheuchc/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/matheushc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheushc/google-cloud-sdk/completion.zsh.inc'; fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
