@@ -78,12 +78,13 @@ export ZSH="/Users/matheushc/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git tmux)
 
 # User configuration
 ZSH_DISABLE_COMPFIX="true"
+ZSH_TMUX_AUTOSTART="true"
+
+source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -129,13 +130,16 @@ zi light zsh-users/zsh-autosuggestions
 # Node version manager
 eval "$(fnm env --use-on-cd)"
 
+# Ruby version manager
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# PyEnv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Plugin manager for kubectl
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Flutter binaries
