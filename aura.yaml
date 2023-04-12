@@ -6,7 +6,7 @@ terminal_colors: # Ansi escape colors.
   bright:
     black: '#4d4d4d'
     blue: '#a277ff'
-    cyan: '#61ffca'
+    cyan: '#a277ff'
     green: '#a277ff'
     magenta: '#a277ff'
     red: '#ffca85'
@@ -15,7 +15,7 @@ terminal_colors: # Ansi escape colors.
   normal:
     black: '#110f18'
     blue: '#61ffca'
-    cyan: '#edecee'
+    cyan: '#61ffca'
     green: '#61ffca'
     magenta: '#a277ff'
     red: '#ff6767'
