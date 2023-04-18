@@ -144,7 +144,13 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-aura-theme", "hyper-font-ligatures"],
+  plugins: [
+    "hyper-aura-theme",
+    "hyper-font-ligatures",
+    "hyper-pane",
+    "hyper-quit",
+    "hyper-highlight-active-pane"
+  ],
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
