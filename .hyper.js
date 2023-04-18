@@ -124,19 +124,8 @@ module.exports = {
     // if `false` (without backticks and without quotes), Hyper will use ligatures provided by some fonts
     disableLigatures: true,
     // set to true to disable auto updates
-    disableAutoUpdates: false,
+    disableAutoUpdates: false
     // for advanced config flags please refer to https://hyper.is/#cfg
-    paneNavigation: {
-      hotkeys: {
-        navigation: {
-          up: "ctrl+alt+up",
-          down: "ctrl+alt+down",
-          left: "ctrl+alt+left",
-          right: "ctrl+alt+right",
-        },
-        jump_prefix: "ctrl+alt", // completed with 1-9 digits
-      },
-    },
   },
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
@@ -147,7 +136,6 @@ module.exports = {
   plugins: [
     "hyper-aura-theme",
     "hyper-font-ligatures",
-    "hyper-pane",
     "hyper-quit",
     "hyper-highlight-active-pane"
   ],
