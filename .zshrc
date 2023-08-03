@@ -123,3 +123,5 @@ if [ -f '/Users/matheushc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mathe
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/matheushc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matheushc/google-cloud-sdk/completion.zsh.inc'; fi
 
+export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current
+
