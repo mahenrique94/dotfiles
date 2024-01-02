@@ -1,3 +1,5 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -99,12 +101,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+## ZI
+if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
+  print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
+  command mkdir -p "$HOME/.zi" && command chmod g-rwX "$HOME/.zi"
+  command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$HOME/.zi/bin" && \
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+    print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+source "$HOME/.zi/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+# examples here -> https://z-shell.pages.dev/docs/gallery/collection
+zicompinit # <- https://z-shell.pages.dev/docs/gallery/collection#minimal
+
+zi light zdharma-continuum/fast-syntax-highlighting
+zi light zsh-users/zsh-autosuggestions
+
 # Node version manager
 eval "$(fnm env --use-on-cd)"
-
-# Ruby version manager
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # PyEnv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -117,6 +132,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Flutter binaries
 export PATH="$PATH:$HOME/.tools/flutter/bin"
 
+# Starship
+eval "$(starship init zsh)"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/matheushc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matheushc/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -125,3 +143,5 @@ if [ -f '/Users/matheushc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users
 
 export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current
 
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
