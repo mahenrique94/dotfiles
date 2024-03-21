@@ -1,0 +1,21 @@
+{
+    AIAssistantRequestLimitInfo = "{\\"limit\\":100,\\"num_requests_used_since_refresh\\":0,\\"next_refresh_time\\":\\"2024-03-22T11:45:55.878491696Z\\"}";
+    AliasExpansionEnabled = true;
+    AutosuggestionAcceptedCount = 2;
+    ChangelogVersions = "{\\"v0.2024.03.12.08.02.stable_02\\":true}";
+    CompletionsOpenWhileTyping = true;
+    ExperimentId = "b7835277-0b64-4ab7-886f-8500cbdf198d";
+    FontName = "\\"JetBrainsMono Nerd Font\\"";
+    FontSize = "14.0";
+    HasAutoOpenedWelcomeFolder = true;
+    ReceivedReferralTheme = "\\"Inactive\\"";
+    RestoreSession = false;
+    Shortcuts = true;
+    ShouldDimInactivePanes = false;
+    ShowIndicatorsButton = true;
+    Spacing = "\\"Normal\\"";
+    StartupShellOverride = "\\"/opt/homebrew/bin/fish\\"";
+    Theme = "{\\"Custom\\":{\\"name\\":\\"Aura-theme\\",\\"path\\":\\"/Users/matheushc/.warp/themes/aura-theme.yaml\\"}}";
+    WelcomeTipsFeaturesUsed = "[{\\"Action\\":\\"CommandPalette\\"},{\\"Hint\\":\\"BlockSelect\\"},{\\"Action\\":\\"ThemePicker\\"},{\\"Action\\":\\"SplitPane\\"},{\\"Hint\\":\\"CreateBlock\\"}]";
+    WorkingDirectoryConfig = "{\\"advanced_mode\\":false,\\"global\\":{\\"mode\\":\\"HomeDir\\",\\"custom_dir\\":\\"\\"},\\"split_pane\\":{\\"mode\\":\\"PreviousDir\\",\\"custom_dir\\":\\"\\"},\\"new_tab\\":{\\"mode\\":\\"PreviousDir\\",\\"custom_dir\\":\\"\\"},\\"new_window\\":{\\"mode\\":\\"PreviousDir\\",\\"custom_dir\\":\\"\\"}}";
+}
