@@ -6,7 +6,7 @@
       "name": "Aura Dark",
       "appearance": "dark",
       "style": {
-        "border": "#110f18",
+        "border": "#333036",
         "border.variant": "#110f18",
         "border.focused": "#110f18",
         "border.selected": "#ff0000",
@@ -41,7 +41,7 @@
         "toolbar.background": "#15141b",
         "tab_bar.background": "#15141b",
         "tab.inactive_background": "#15141b",
-        "tab.active_background": "#00000000",
+        "tab.active_background": "#15141b",
         "search.match_background": "#a394f033",
         "panel.background": "#110f18",
         "panel.focused_border": "#ff0000",
@@ -213,7 +213,7 @@
             "font_weight": null
           },
           "link_uri": {
-            "color": "#ff0000",
+            "color": "#f0000",
             "font_style": null,
             "font_weight": null
           },
