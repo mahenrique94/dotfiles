@@ -268,7 +268,7 @@
             "font_weight": null
           },
           "punctuation.special": {
-            "color": "#ff0000",
+            "color": "#82e2ff",
             "font_style": null,
             "font_weight": null
           },
@@ -278,12 +278,12 @@
             "font_weight": null
           },
           "string.escape": {
-            "color": "#ff0000",
+            "color": "#61ffca",
             "font_style": null,
             "font_weight": null
           },
           "string.regex": {
-            "color": "#ff0000",
+            "color": "#61ffca",
             "font_style": null,
             "font_weight": null
           },
@@ -313,7 +313,7 @@
             "font_weight": 400
           },
           "type": {
-            "color": "#ffca85",
+            "color": "#82e2ff",
             "font_style": null,
             "font_weight": null
           },
@@ -323,7 +323,7 @@
             "font_weight": null
           },
           "variable.special": {
-            "color": "#ff0000",
+            "color": "#a277ff",
             "font_style": null,
             "font_weight": null
           },
