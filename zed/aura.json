@@ -92,7 +92,7 @@
         "terminal.ansi.white": "#cdccce",
         "terminal.ansi.bright_white": "#edecee",
         "terminal.ansi.dim_white": "#ff0000",
-        "link_text.hover": "#ff0000",
+        "link_text.hover": "#a277ff",
         "conflict": "#a277ff",
         "conflict.background": "#a277ff",
         "conflict.border": "#ffffff00",
