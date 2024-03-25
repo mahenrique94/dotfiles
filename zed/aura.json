@@ -173,7 +173,7 @@
             "font_weight": null
           },
           "emphasis": {
-            "color": "#ff0000",
+            "color": "#f0000",
             "font_style": null,
             "font_weight": null
           },
@@ -208,12 +208,12 @@
             "font_weight": null
           },
           "link_text": {
-            "color": "#ff0000",
+            "color": "#61ffca",
             "font_style": "normal",
             "font_weight": null
           },
           "link_uri": {
-            "color": "#f0000",
+            "color": "#a277ff",
             "font_style": null,
             "font_weight": null
           },
@@ -303,7 +303,7 @@
             "font_weight": null
           },
           "text.literal": {
-            "color": "#ff0000",
+            "color": "#61ffca",
             "font_style": null,
             "font_weight": null
           },
