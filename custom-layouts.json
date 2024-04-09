@@ -1,0 +1,119 @@
+{
+  "custom-layouts": [
+    {
+      "uuid": "{053776DF-C490-4AD0-A4EE-221B47328276}",
+      "name": "Recording",
+      "type": "grid",
+      "info": {
+        "rows": 2,
+        "columns": 2,
+        "rows-percentage": [
+          7500,
+          2500
+        ],
+        "columns-percentage": [
+          5581,
+          4419
+        ],
+        "cell-child-map": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "show-spacing": false,
+        "spacing": 16,
+        "sensitivity-radius": 0
+      }
+    },
+    {
+      "uuid": "{A0619DC4-2CC7-4290-B026-4BE98C207E6C}",
+      "name": "Split Screen",
+      "type": "grid",
+      "info": {
+        "rows": 1,
+        "columns": 2,
+        "rows-percentage": [
+          10000
+        ],
+        "columns-percentage": [
+          4999,
+          5001
+        ],
+        "cell-child-map": [
+          [
+            0,
+            1
+          ]
+        ],
+        "show-spacing": false,
+        "spacing": 16,
+        "sensitivity-radius": 20
+      }
+    },
+    {
+      "uuid": "{D9983632-2ADB-4824-B630-CFB981ABA38A}",
+      "name": "Recording Split Screen",
+      "type": "grid",
+      "info": {
+        "rows": 2,
+        "columns": 3,
+        "rows-percentage": [
+          7500,
+          2500
+        ],
+        "columns-percentage": [
+          2791,
+          2791,
+          4418
+        ],
+        "cell-child-map": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            2,
+            2,
+            3
+          ]
+        ],
+        "show-spacing": true,
+        "spacing": 0,
+        "sensitivity-radius": 0
+      }
+    },
+    {
+      "uuid": "{38E96FC7-8514-45DB-889C-1551C221EEF5}",
+      "name": "Split 2x Screen",
+      "type": "grid",
+      "info": {
+        "rows": 1,
+        "columns": 3,
+        "rows-percentage": [
+          10000
+        ],
+        "columns-percentage": [
+          2499,
+          2501,
+          5000
+        ],
+        "cell-child-map": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "show-spacing": true,
+        "spacing": 0,
+        "sensitivity-radius": 0
+      }
+    }
+  ]
+}
