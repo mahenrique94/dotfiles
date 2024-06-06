@@ -5,3 +5,5 @@
 	uw = git add . && git commit -m \"Add new content\" && git push
 [init]
 	defaultBranch = main
+[core]
+	ignorecase = true
