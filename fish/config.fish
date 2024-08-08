@@ -15,3 +15,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # flutter
 set PATH ~/.tools/flutter/bin $PATH
 
+# The next line updates PATH for the Google Cloud SDK.
+source /Users/matheushc/google-cloud-sdk/path.fish.inc
+
