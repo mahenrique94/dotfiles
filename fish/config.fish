@@ -18,3 +18,6 @@ set PATH ~/.tools/flutter/bin $PATH
 # The next line updates PATH for the Google Cloud SDK.
 source /Users/matheushc/google-cloud-sdk/path.fish.inc
 
+# dotnet
+set -x DOTNET_ROOT /usr/local/share/dotnet
+
