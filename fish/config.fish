@@ -21,3 +21,6 @@ source /Users/matheushc/google-cloud-sdk/path.fish.inc
 # dotnet
 set -x DOTNET_ROOT /usr/local/share/dotnet
 
+# ruby env
+set -x PATH $PATH /opt/homebrew/bin/rbenv
+rbenv init - | source
