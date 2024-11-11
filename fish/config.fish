@@ -25,7 +25,9 @@ source ~/google-cloud-sdk/path.fish.inc
 
 
 # ruby env
+# Added by `rbenv init` on Mon Nov 11 10:53:21 -03 2024
 set -x PATH $PATH /opt/homebrew/bin/rbenv
+status --is-interactive; and rbenv init - --no-rehash fish | source
 
 
 
