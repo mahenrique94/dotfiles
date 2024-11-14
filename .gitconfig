@@ -7,3 +7,5 @@
 	defaultBranch = main
 [core]
 	ignorecase = true
+[pull]
+	rebase = true
