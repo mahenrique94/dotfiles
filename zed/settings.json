@@ -4,10 +4,18 @@
 // documentation: https://zed.dev/docs/configuring-zed
 //
 // To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "Aura Dark",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Aura Dark (Soft Text)"
+  },
   "buffer_font_size": 14,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "format_on_save": "off",
@@ -24,3 +32,4 @@
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 14
 }
+
