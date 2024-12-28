@@ -26,10 +26,9 @@
   "tab_size": 2,
   "terminal": {
     "shell": {
-      "program": "/usr/local/bin/fish"
+      "program": "/opt/homebrew/bin/fish"
     }
   },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 14
 }
-
