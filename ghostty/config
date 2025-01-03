@@ -1,0 +1,14 @@
+adjust-cell-height = 20%
+command = /opt/homebrew/bin/fish
+font-family = "JetBrainsMono Nerd Font"
+keybind = ctrl+d=new_split:right
+keybind = ctrl+shift+d=new_split:down
+quit-after-last-window-closed = true
+shell-integration = fish
+theme = aura
+title = " "
+window-padding-x = 10
+window-padding-y = 20
+window-save-state = never
+working-directory = home
+
