@@ -4,9 +4,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Cmd line below status line height
-vim.opt.cmdheight = 0
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -17,12 +14,14 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = ''
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.opt.showcmd = false
+vim.opt.cmdheight = 0
 vim.opt.showtabline = 0
+vim.o.laststatus = 1
 
 -- Indentation
 vim.opt.tabstop = 2
@@ -55,7 +54,6 @@ vim.opt.title = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
---vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.expandtab = false
 
 -- Preview substitutions live, as you type!
@@ -80,7 +78,13 @@ vim.opt.sessionoptions = "buffers,curdir,folds,help,winsize,winpos,tabpages,loca
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.o.laststatus = 1
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -341,6 +345,7 @@ require('lazy').setup({
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
+		    -- lua_ls {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -348,23 +353,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
-        --
         csharp_ls = {},
-
-        lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -521,8 +510,7 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-
-  -- Collection of various small independent plugins/modules
+	-- Collection of various small independent plugins/modules
   {
     'echasnovski/mini.nvim',
     config = function()
@@ -560,7 +548,7 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
-  
+
   -- Highlight, edit, and navigate code
   {
     'nvim-treesitter/nvim-treesitter',
@@ -710,6 +698,92 @@ require('lazy').setup({
       })
     end,
   },
+
+	{
+		'romgrk/barbar.nvim',
+		dependencies = {
+			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+		},
+		init = function()
+			vim.g.barbar_auto_setup = true
+		end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		config = function()
+			local map = vim.api.nvim_set_keymap
+			local opts = { noremap = true, silent = true }
+
+			-- Move to previous/next
+			map('n', '<C-,>', '<Cmd>BufferPrevious<CR>', opts)
+			map('n', '<C-.>', '<Cmd>BufferNext<CR>', opts)
+
+			-- Re-order to previous/next
+			map('n', '<C-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+			map('n', '<C->>', '<Cmd>BufferMoveNext<CR>', opts)
+
+			-- Goto buffer in position...
+			map('n', '<C-1>', '<Cmd>BufferGoto 1<CR>', opts)
+			map('n', '<C-2>', '<Cmd>BufferGoto 2<CR>', opts)
+			map('n', '<C-3>', '<Cmd>BufferGoto 3<CR>', opts)
+			map('n', '<C-4>', '<Cmd>BufferGoto 4<CR>', opts)
+			map('n', '<C-5>', '<Cmd>BufferGoto 5<CR>', opts)
+			map('n', '<C-6>', '<Cmd>BufferGoto 6<CR>', opts)
+			map('n', '<C-7>', '<Cmd>BufferGoto 7<CR>', opts)
+			map('n', '<C-8>', '<Cmd>BufferGoto 8<CR>', opts)
+			map('n', '<C-9>', '<Cmd>BufferGoto 9<CR>', opts)
+			map('n', '<C-0>', '<Cmd>BufferLast<CR>', opts)
+
+			-- Pin/unpin buffer
+			map('n', '<C-p>', '<Cmd>BufferPin<CR>', opts)
+
+			-- Goto pinned/unpinned buffer
+			--                 :BufferGotoPinned
+			--                 :BufferGotoUnpinned
+
+			-- Close buffer
+			map('n', '<C-w>', '<Cmd>BufferClose<CR>', opts)
+
+			-- Wipeout buffer
+			--                 :BufferWipeout
+
+			-- Close commands
+			--                 :BufferCloseAllButCurrent
+			--                 :BufferCloseAllButPinned
+			--                 :BufferCloseAllButCurrentOrPinned
+			--                 :BufferCloseBuffersLeft
+			--                 :BufferCloseBuffersRight
+
+			-- Magic buffer-picking mode
+			map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
+			map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
+
+			-- Sort automatically by...
+			map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+			map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', opts)
+			map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
+			map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
+			map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+			-- Other:
+			-- :BarbarEnable - enables barbar (enabled by default)
+			-- :BarbarDisable - very bad command, should never be used
+		end,
+		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+	},
+	{
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+			require('dashboard').setup {
+				-- config
+			}
+		end,
+		dependencies = { {'nvim-tree/nvim-web-devicons'}}
+	},
 }, {
   ui = {
     icons = {},
