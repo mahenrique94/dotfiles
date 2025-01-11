@@ -5,7 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Cmd line below status line height
-vim.g.cmdheight = 0
+vim.opt.cmdheight = 0
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -54,7 +54,9 @@ vim.opt.title = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.list = true
+--vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.expandtab = false
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -78,7 +80,7 @@ vim.opt.sessionoptions = "buffers,curdir,folds,help,winsize,winpos,tabpages,loca
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.o.laststatus = 3
+vim.o.laststatus = 1
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -672,6 +674,8 @@ require('lazy').setup({
       { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
     },
     opts = {
+      close_if_last_window = false,
+      enable_git_status = true,
       filesystem = {
         window = {
           mappings = {
@@ -680,16 +684,31 @@ require('lazy').setup({
         },
       },
     },
-    config = function()
-      require("neo-tree").setup({
-        close_if_last_window = false,
-      })
-    end
   },
   
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  
+  {
+    "fraso-dev/nvim-listchars",
+    event = "BufEnter",
+    config = function()
+      require("nvim-listchars").setup({
+        listchars = {
+          trail = "·",
+          eol = " ",
+          tab = "··",
+          space = "·",
+        },
+        notifications = true,
+        exclude_filetypes = {
+          "markdown"
+        },
+        lighten_step = 10,
+      })
+    end,
   },
 }, {
   ui = {
