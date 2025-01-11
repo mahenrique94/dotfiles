@@ -323,6 +323,7 @@ require('lazy').setup({
       --   end
       --   vim.diagnostic.config { signs = { text = diagnostic_signs } }
       -- end
+			vim.diagnostic.config { update_in_insert = true }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -662,9 +663,17 @@ require('lazy').setup({
       { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
     },
     opts = {
-      close_if_last_window = false,
+      close_if_last_window = true,
       enable_git_status = true,
       filesystem = {
+				filtered_items = {
+					hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_hidden = false, -- only works on Windows for hidden files/directories
+				},
+				follow_current_file = {
+					enabled = true,
+				},
         window = {
           mappings = {
             ['\\'] = 'close_window',
