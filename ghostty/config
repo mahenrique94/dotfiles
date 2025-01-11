@@ -7,8 +7,10 @@ quit-after-last-window-closed = true
 shell-integration = fish
 theme = aura
 title = " "
+window-height = 1000
 window-padding-x = 10
 window-padding-y = 20
 window-save-state = never
+window-width = 1000
 working-directory = home
 
