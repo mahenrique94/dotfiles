@@ -784,6 +784,49 @@ require('lazy').setup({
 		end,
 		dependencies = { {'nvim-tree/nvim-web-devicons'}}
 	},
+
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+			cmdline = {
+				enabled = true,
+			},
+			messages = {
+				enabled = true,
+			},
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+    }
+	},
+
+	{
+		'akinsho/toggleterm.nvim',
+		version = "*",
+		opts = {
+			--[[ things you want to change go here]]
+			open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+			insert_mappings = true, -- whether or not the open mapping applies in insert mode
+		  terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
+			shell = '/opt/homebrew/bin/fish',
+			auto_scroll = true, -- automatically scroll to the bottom on terminal output
+		}
+	},
+
+	--{
+    --"lukas-reineke/indent-blankline.nvim",
+    --main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    --opts = {},
+	--}
 }, {
   ui = {
     icons = {},
