@@ -15,3 +15,6 @@ Commong config files
 10. `cp init.lua ~/.hammerspoon/`
 11. Starship
 12. `cp starship.toml ~/.config/`
+13. Neovim
+14. `mkdir -p ~/.config/nvim`
+15. `cp ./nvim/init.lua ~/.config/nvim/`
