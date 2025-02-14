@@ -43,6 +43,11 @@ set -gx PATH $ANDROID_HOME/emulator $PATH
 
 
 # java
-set --export JAVA_HOME /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home
+set --export JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -gx PATH $JAVA_HOME/bin $PATH
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mhc/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/mhc/Downloads/google-cloud-sdk/path.fish.inc'; end
+
+alias assume="source (brew --prefix)/bin/assume.fish"
