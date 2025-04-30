@@ -24,14 +24,6 @@ source ~/google-cloud-sdk/path.fish.inc
 
 
 
-# ruby env
-# Added by `rbenv init` on Mon Nov 11 10:53:21 -03 2024
-set -x PATH $PATH /opt/homebrew/bin/rbenv
-status --is-interactive; and rbenv init - --no-rehash fish | source
-
-
-
-
 # android
 set --export ANDROID "$HOME/Library/Android"
 set --export ANDROID_HOME "$ANDROID/sdk"
@@ -47,7 +39,35 @@ set --export JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -gx PATH $JAVA_HOME/bin $PATH
 
 
+
+# python
+set -gx PATH $PATH ~/Library/Python/3.11/bin/
+
+
+
+# maestro
+set -gx PATH $PATH ~/.maestro/bin/
+
+
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mhc/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/mhc/Downloads/google-cloud-sdk/path.fish.inc'; end
 
 alias assume="source (brew --prefix)/bin/assume.fish"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.fish 2>/dev/null || :
+
+# Added by Windsurf
+fish_add_path /Users/mhc/.codeium/windsurf/bin
+
+
+
+# RVM
+rvm default
+
+
+# Added by Windsurf
+fish_add_path /Users/mhc/.codeium/windsurf/bin
+
