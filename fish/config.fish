@@ -14,14 +14,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 
 
-# flutter
-set PATH ~/.tools/flutter/bin $PATH
-
-
-
-# The next line updates PATH for the Google Cloud SDK.
-source ~/google-cloud-sdk/path.fish.inc
-
 
 
 # android
@@ -50,24 +42,14 @@ set -gx PATH $PATH ~/.maestro/bin/
 
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mhc/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/mhc/Downloads/google-cloud-sdk/path.fish.inc'; end
+# opencode
+set -gx PATH $PATH ~/.opencode/bin
+
+
 
 alias assume="source (brew --prefix)/bin/assume.fish"
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.fish 2>/dev/null || :
-
-# Added by Windsurf
-fish_add_path /Users/mhc/.codeium/windsurf/bin
-
-
-
-# RVM
-rvm default
-
-
-# Added by Windsurf
-fish_add_path /Users/mhc/.codeium/windsurf/bin
 
